@@ -6,7 +6,7 @@ Sistema de geração de leads para prospecção B2B. Permite buscar empresas por
 
 O **Prospecta Aqui** é dividido em dois módulos:
 
-- **Frontend** — Interface web construída com Next.js, React e Tailwind CSS
+- **Frontend** — Interface web construída com Next.js e ShadUI
 - **Backend** — API REST que consulta empresas no Google Places API
 
 ## Como começar

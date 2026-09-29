@@ -1,10 +1,62 @@
 # Prospecta Aqui — Frontend
 
-Frontend do **Prospecta Aqui**, um sistema de geração de leads para prospecção B2B.
+Interface web do **Prospecta Aqui**, um sistema de geração de leads para prospecção B2B.
 
-## O que faz
+## Requisitos
 
-Permite buscar empresas por segmento e cidade, visualizar os dados (nome, telefone, site, endereço) e exportar os leads.
+- [Bun](https://bun.sh/) 1.0+
+- Node.js 18+ (opcional, caso não use Bun)
+
+## Instalação
+
+```bash
+bun install
+```
+
+## Configuração
+
+Copie o arquivo de exemplo e preencha com suas variáveis:
+
+```bash
+cp .env.example .env.local
+```
+
+### Variáveis de ambiente
+
+| Variável | Descrição |
+| -------- | --------- |
+| `NEXT_PUBLIC_API_URL` | URL do backend (padrão: `http://localhost:3000`) |
+
+## Execução
+
+### Desenvolvimento
+
+```bash
+bun run dev
+```
+
+O servidor sobe em `http://localhost:3000`.
+
+### Build
+
+```bash
+bun run build
+```
+
+### Produção
+
+```bash
+bun run start
+```
+
+## Scripts
+
+| Comando         | Descrição           |
+| --------------- | ------------------- |
+| `bun run dev`  | Servidor de desenvolvimento |
+| `bun run build`| Build de produção   |
+| `bun run start`| Servidor de produção |
+| `bun run lint` | Análise estática    |
 
 ## Stack
 
@@ -16,18 +68,9 @@ Permite buscar empresas por segmento e cidade, visualizar os dados (nome, telefo
 - **React Hook Form** + **Zod** (validação de formulários)
 - **Bun** (package manager)
 
-## Scripts
+## Estrutura do projeto
 
-```bash
-bun run dev      # Desenvolvimento
-bun run build    # Build de produção
-bun run start    # Servidor de produção
-bun run lint     # Análise estática
-```
-
-## Estrutura
-
-```
+```text
 frontend/
 ├── app/                    # Rotas (App Router)
 │   ├── layout.tsx          # Layout raiz
@@ -57,24 +100,3 @@ frontend/
 ├── postcss.config.mjs
 └── tsconfig.json
 ```
-
-## Variáveis de ambiente
-
-Copie o arquivo de exemplo:
-
-```bash
-cp .env.example .env.local
-```
-
-## Desenvolvimento
-
-```bash
-bun install
-bun run dev
-```
-
-O servidor sobe em `http://localhost:3000`.
-
-## Licença
-
-Prospecta Aqui

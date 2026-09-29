@@ -1,6 +1,6 @@
 # Prospecta Aqui — Backend
 
-API REST simples para consulta de empresas no Google Places API (Text Search New).
+API REST do **Prospecta Aqui**, um sistema de geração de leads para prospecção B2B. Responsável por consultar empresas no Google Places API (Text Search New) e retornar os dados formatados.
 
 ## Requisitos
 
@@ -57,6 +57,15 @@ bun run build
 ```bash
 bun run start
 ```
+
+## Scripts
+
+| Comando         | Descrição           |
+| --------------- | ------------------- |
+| `bun run dev`  | Servidor de desenvolvimento |
+| `bun run build`| Build de produção   |
+| `bun run start`| Servidor de produção |
+| `bun run lint` | Análise estática    |
 
 ## Endpoints
 
@@ -136,21 +145,29 @@ curl -X POST http://localhost:3000/api/negocios/buscar \
 ## Estrutura do projeto
 
 ```text
-src/
-  app.ts
-  server.ts
-  routes/
-    negocio.routes.ts
-  controllers/
-    negocio.controller.ts
-  services/
-    google-places.service.ts
-  schemas/
-    negocio.schema.ts
-  types/
-    negocio.ts
-  config/
-    env.ts
-  middlewares/
-    error-handler.ts
+backend/
+├── src/
+│   ├── app.ts                  # Configuração do Express
+│   ├── server.ts               # Entry point do servidor
+│   ├── routes/
+│   │   └── negocio.routes.ts   # Rotas de negócios
+│   ├── controllers/
+│   │   └── negocio.controller.ts
+│   ├── services/
+│   │   └── google-places.service.ts
+│   ├── schemas/
+│   │   └── negocio.schema.ts
+│   ├── types/
+│   │   └── negocio.ts
+│   ├── config/
+│   │   └── env.ts
+│   └── middlewares/
+│       └── error-handler.ts
+├── .env.example
+├── .gitignore
+├── bun.lock
+├── eslint.config.js
+├── package.json
+├── prettier.config.js
+└── tsconfig.json
 ```
